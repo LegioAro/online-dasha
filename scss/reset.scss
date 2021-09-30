@@ -1,0 +1,101 @@
+html,
+body,
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100%;
+    max-width: 84px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40px;
+    font-size: calc(25px + (40 - 25) * ((100vw - 320px) / (1920 - 320)));
+    text-align: center;
+    span {
+        font-weight: 500;
+    }
+}
+
+.slick-list {
+    overflow: hidden;
+}
+.slick-track {
+    display: flex;
+}
+
+/* Точки (булиты) */
+.slick-dots {
+    display: flex;
+    justify-content: center;
+}
+.slick-dots li {
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 0.873684px solid rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    position: relative;
+    background-color: #fff;
+    &::before {
+        position: absolute;
+        opacity: 0;
+        transition: 0.3s;
+        content: "";
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: linear-gradient(90deg, #84a5f1 0%, #4b77ee 100%), #d7d7d7;
+    }
+}
+/* Активная точка */
+.slick-dots li.slick-active {
+    &::before {
+        opacity: 1;
+    }
+}
+/* Элемент точки */
+.slick-dots li button {
+    display: none;
+}
+
+.fancybox__slide {
+    padding: 20px;
+}

@@ -1,0 +1,125 @@
+.cause {
+    position: relative;
+    overflow: hidden;
+
+    &__wrapper {
+        padding: 100px 10px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__items {
+        margin: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 68px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        padding: 30px 25px 30px 0;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: calc(100% - 13px);
+            background: linear-gradient(90deg, #84a5f1 0%, #4b77ee 100%);
+            border-radius: 3px;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%);
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 11px;
+            height: calc(100% - 11px);
+            background: #ffffff;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__item-img {
+        width: 100%;
+        max-width: 100px;
+        min-width: 100px;
+        margin-right: 25px;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__item-text {
+        font-size: 14px;
+        line-height: 20px;
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &__text {
+    }
+
+    &__decor {
+        position: absolute;
+        width: 100%;
+    }
+
+    &__decor-1 {
+        max-width: 415px;
+        top: 55px;
+        left: 155px;
+    }
+
+    &__decor-2 {
+        max-width: 602px;
+        bottom: 0;
+        right: 150px;
+    }
+
+    .slick-list {
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cause {
+        &__items {
+            grid-gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .cause {
+        &__item {
+            padding: 20px 15px 20px 0;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .cause {
+        &__wrapper {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &__items {
+            display: flex;
+            flex-direction: column;
+        }
+        &__item {
+            margin: 0 10px;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+.who {
+    background-image: url(../img/who_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    color: #fff;
+
+    &__wrapper {
+        padding: 100px 10px 160px;
+    }
+
+    &__items {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 54px;
+    }
+
+    &__item {
+        position: relative;
+        padding: 35px 21px;
+        text-align: center;
+        background: linear-gradient(90deg, #3b3c46 0%, #282831 100%);
+        &:nth-child(2n) {
+            transform: translateY(60px);
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            background: linear-gradient(90deg, #84a5f1 0%, #4b77ee 100%), #c4c4c4;
+        }
+        &::before {
+            width: 35px;
+            height: 35px;
+            top: -7px;
+            left: -7px;
+        }
+        &::after {
+            width: 19px;
+            height: 19px;
+            bottom: -7px;
+            right: -7px;
+        }
+    }
+
+    &__item-num-block {
+        position: relative;
+        font-weight: 800;
+        font-size: 101.689px;
+        margin-bottom: 9px;
+        p {
+            position: relative;
+            z-index: 1;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-44%) translateY(5px);
+            background: linear-gradient(90deg, #84a5f1 0%, #4b77ee 100%), #c4c4c4;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__item-text {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 145%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .who {
+        &__items {
+            grid-gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .who {
+        &__items {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 54px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .who {
+        &__items {
+            grid-gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .who {
+        &__items {
+            display: flex;
+            flex-direction: column;
+        }
+        &__item {
+            margin: 10px;
+            &:nth-child(2n) {
+                transform: translateY(0px);
+            }
+        }
+    }
+}
